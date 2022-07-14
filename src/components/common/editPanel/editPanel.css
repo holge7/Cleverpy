@@ -12,13 +12,55 @@
 }
 
 .editPanel{
-    width: 40vw;
-    height: 80vh;
+    width: 90vw;
+    height: 90vh;
     background-color: var(--white);
     border: 2px solid;
+    padding: 1rem 2rem;
 }
 
 .editPanel-title{
     width: 100%;
     height: max-content;
+}
+.editable-box{
+    margin: 1rem 0;
+}
+
+.btn{
+    border: none;
+    border: 1px solid black;
+    padding: .5rem 1rem;
+    border-radius: var(--radius);
+    font-size: var(--normal);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-save{
+    background-color: royalblue;
+}
+
+.btn-discard{
+    background-color: red;
+
+}
+
+
+/* TABLET */
+@media (min-width: 800px) {
+    .editPanel{
+        width: 70vw;
+        height: 80vh;
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .editPanel{
+        width: 40vw;
+        height: 80vh;
+    }
 }

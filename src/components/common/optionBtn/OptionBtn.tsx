@@ -19,7 +19,10 @@ export default (post:posts) => {
     const dispatch = useAppDispatch()
 
     const changeOption = () => setOption(!option)
-    const changeEdit = () => setEdit(!edit)
+    const changeEdit = () => {
+        setOption(false)
+        setEdit(!edit)
+    }
     
 
     const removePost = () => {
