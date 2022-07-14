@@ -1,0 +1,37 @@
+.post_wrapper{
+    background-color: var(--white);
+    margin: .5rem 0;
+    box-shadow: 0 0 4px 1px rgb(233, 233, 233);
+    padding: 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: flex-start;
+}
+
+.post_data{
+    margin-right: .5rem;
+}
+
+.post-title{
+    font-size: var(--normal);
+    font-weight: bold;
+}
+
+
+
+
+
+/* TABLET */
+@media (min-width: 800px) {
+    .post-title{
+        font-size: var(--lg);
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .post-title{
+        font-size: var(--xl);
+    }
+}

@@ -1,0 +1,43 @@
+.option-menu{
+    
+    position: relative;
+}
+.option_btn{
+    padding: 0 .5rem;
+    font-size: var(--lg);
+    cursor: pointer;
+    transition: all .3s;
+}
+.option_btn-act{
+    transform: rotate(180deg);
+}
+
+.option-card{
+    position: absolute;
+    background-color: var(--white-second);
+    width: max-content;
+    right: 0;
+    top: 2rem;
+    font-size: var(--normal);
+    border-radius: var(--radius);
+    border: 1px solid;
+    box-shadow: 0 0 5px 1px var(--gray);
+    padding: .1rem;
+    cursor: default;
+}
+.option{
+    font-weight: bold;
+    padding: .3rem 1rem;
+    border-radius: var(--radius);
+    margin: .2rem 0;
+    cursor: pointer;
+}
+.option:hover{
+    background-color: var(--gray);
+}
+.option-danger{
+    color: red;
+}
+.option-blue{
+    color: royalblue;
+}

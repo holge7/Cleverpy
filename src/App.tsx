@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { fetchPosts } from './store/posts/postsSlice';
+
+import Content from './components/content/Content';
 
 function App() {
+  const {posts, loading, error} = useAppSelector((state)=>state.posts);
+  const dispatch = useAppDispatch();
+  
+  useEffect(()=>{
+      dispatch(fetchPosts())
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Content />
     </div>
   );
 }

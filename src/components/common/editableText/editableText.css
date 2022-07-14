@@ -1,0 +1,12 @@
+.editableText{
+    padding: .2rem;
+    resize: none;
+    white-space: pre-wrap;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-family);
+    overflow: hidden;
+}
+.editableText:focus{
+    outline: none;
+}

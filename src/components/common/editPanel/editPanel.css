@@ -1,0 +1,24 @@
+.editPanel-wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    background-color: var(--gray-transparent);
+}
+
+.editPanel{
+    width: 40vw;
+    height: 80vh;
+    background-color: var(--white);
+    border: 2px solid;
+}
+
+.editPanel-title{
+    width: 100%;
+    height: max-content;
+}
