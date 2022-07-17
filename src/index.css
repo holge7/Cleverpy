@@ -26,8 +26,12 @@ code {
   --white-second: #F5F5F5;
   --white: #FFFFFF;
   --purple: #712480;
+  --purple-transparent: #7124801f;
+
+
   --pink:#E11574;
-  --blue-dark: #1F2937;
+  --pink-transparent: #e1157433;
+
 
   /*FONT*/
   --xs: .7rem;

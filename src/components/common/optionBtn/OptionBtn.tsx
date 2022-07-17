@@ -1,5 +1,5 @@
 import './optionBtn.css';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 //Components
 import OptionsPanel from '../optionsPanel/OptionsPanel';
@@ -29,7 +29,10 @@ export default (post:posts) => {
 
     const isOptionDown = () => optionState.optionsDown == post.id
     const isEditMode = () => optionState.editMode == post.id
-    
+    let top=0;
+    useEffect(()=>{
+        top = window.scrollY
+    }, [isEditMode])
 
 
 
@@ -44,7 +47,7 @@ export default (post:posts) => {
                 </div>
                 {isOptionDown() && <OptionsPanel />}
             </div>
-            {isEditMode() && <EditPanel />}
+            {isEditMode() && <EditPanel top={window.scrollY} />}
         </div>
     )
 }

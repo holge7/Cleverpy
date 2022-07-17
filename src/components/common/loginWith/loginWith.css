@@ -1,0 +1,14 @@
+.loginWith_wrapper{
+    display: flex;
+    color: white;
+    padding: .3rem 1rem;
+    font-size: var(--lg);
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: .5rem 0;
+    width: 100%;
+}
+
+.loginWith-icon{
+    color: white;
+}

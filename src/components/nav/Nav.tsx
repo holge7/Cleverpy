@@ -10,9 +10,9 @@ export default () => {
                     <label htmlFor='search'><i className="bi bi-search "></i></label>
                 </div>
             </div>
-            <div className='nav-section'>
-                <button className='login-btn pink'>Log in</button>
-                <button className='login-btn purple'>Create account</button>
+            <div className='nav-section nav-login'>
+                <button className='nav-btn btn-login'>Log in</button>
+                <button className='nav-btn btn-register'>Create account</button>
             </div>
         </div>
     )

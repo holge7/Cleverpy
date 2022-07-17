@@ -1,8 +1,6 @@
 import './editPanel.css';
 
-import { useContext, useEffect, useState } from 'react';
-
-import { posts } from '../../../types/types';
+import { useContext, useState } from 'react';
 
 //Components
 import EditableText from '../editableText/EditableText';
@@ -16,7 +14,11 @@ import { editPost } from '../../../store/posts/postsSlice';
 //Context
 import { OptionsContext } from '../../content/Content';
 
-export default () => {
+type props = {
+    top:number
+}
+
+export default (props:props) => {
 
     
     //Context
@@ -41,7 +43,7 @@ export default () => {
     
 
     return (
-        <div className="editPanel-wrapper">
+        <div className="editPanel-wrapper" style={{top:props.top}}>
             <div className='editPanel'>
 
                 <div>

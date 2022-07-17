@@ -2,7 +2,6 @@ import React from "react";
 import './editableText.css';
 import { useState, useEffect, useRef } from "react"
 
-
 type editableTextProps = {
     text:string,
     name:string,
@@ -17,11 +16,12 @@ const errors = {
         msg:'Max number of characters reached'
     }
 }
+
 type ObjectKeyErrors = keyof typeof errors;
 
 export default (props:editableTextProps) => {
 
-
+    //Text edited
     const [editText, setEditText] = useState(props.text ?? '')
     const [error, setError] = useState<ObjectKeyErrors | null>()
 

@@ -7,14 +7,16 @@
     grid-column-end: 11;
 }
 .nav-section{
-    
     display: flex;
     align-items: center;
+}
+.nav-section > * {
+    margin: 0 .3rem;
 }
 .logo{
     height: 3.5vh;
 }
-.login-btn{
+.nav-btn{
     border: 2px solid var(--pink);
     color: var(--pink);
     padding: .3rem 1rem;
@@ -24,20 +26,20 @@
     cursor: pointer;
 }
 
-.pink{
+.btn-login{
     border-color: var(--pink);
     color: var(--pink);
 }
-.pink:hover{
+.btn-login:hover{
     color: var(--white);
     background-color: var(--pink);
 }
 
-.purple{
+.btn-register{
     border-color: var(--purple);
     color: var(--purple);
 }
-.purple:hover{
+.btn-register:hover{
     color: var(--white);
     background-color: var(--purple);
 }
@@ -53,3 +55,36 @@
     border: none;
     font-size: var(--normal);
 }
+.search:focus{
+    outline: 0;
+}
+
+.nav-login{
+    display: none;
+}
+
+/* TABLET */
+@media (min-width: 800px) {
+    #Section{
+      grid-column-start: 3;
+      grid-column-end: 11;
+    }
+    .nav-login{
+        display: block;
+    }
+  }
+  
+  
+  /* DESKTOP */
+  @media (min-width: 1024px) {
+    #Sidebar{
+      display: block;
+      grid-column-start: 3;
+      grid-column-end: 5;
+      margin-top: .5rem;
+    }
+    #Section{
+      grid-column-start: 5;
+      grid-column-end: 11;
+    }
+  }

@@ -1,0 +1,18 @@
+.side_block{
+    margin: 2rem 0;
+}
+.side_obj{
+    border-radius: .5rem;
+    margin: .3rem 0;
+    padding: .5rem .2rem;
+}
+.side_obj:hover{
+    cursor: pointer;
+    background-color: var(--purple-transparent);
+    color: var(--purple);
+}
+
+.sidebar_tags{
+    height: 20rem;
+    overflow-y: scroll;
+}
