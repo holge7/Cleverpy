@@ -1,5 +1,4 @@
 .option-menu{
-    
     position: relative;
 }
 .option_btn{
@@ -12,19 +11,33 @@
     transform: rotate(180deg);
 }
 
-.option-card{
+.option_card{
     position: absolute;
+    z-index: 10;
     background-color: var(--white-second);
     width: max-content;
     right: 0;
-    top: 2rem;
+    top: 1.5rem;
     font-size: var(--normal);
     border-radius: var(--radius);
     border: 1px solid;
     box-shadow: 0 0 5px 1px var(--gray);
     padding: .1rem;
     cursor: default;
+    overflow: hidden;
+    animation: dropOptionCard .25s linear forwards;
 }
+@keyframes dropOptionCard {
+    from{
+        height: 0;
+    }to{
+        height: 7rem;
+    }
+}
+
+
+
+
 .option{
     font-weight: bold;
     padding: .3rem 1rem;

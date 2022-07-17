@@ -1,23 +1,72 @@
 import './editPanel.css';
+
+import { useContext, useEffect, useState } from 'react';
+
 import { posts } from '../../../types/types';
 
+//Components
 import EditableText from '../editableText/EditableText';
+import Btn from '../btn/Btn';
 
-export default (post:posts) => {
+//Store
+import { useAppDispatch } from '../../../store/hooks';
+import { useAppSelector } from '../../../store/hooks';
+import { editPost } from '../../../store/posts/postsSlice';
+
+//Context
+import { OptionsContext } from '../../content/Content';
+
+export default () => {
+
+    
+    //Context
+    const {optionDispatch} = useContext(OptionsContext)
+    
+    //Store
+    const {editArea} = useAppSelector((state)=>state.posts);
+    const dispatchStore = useAppDispatch();
+
+    //State
+    const [modifyPost, setModifyPost] = useState({...editArea})
+    
+    const modifyText = (newString:string, name:string) => {
+        setModifyPost({...modifyPost, [name]:newString})
+    }
+    
+    const close = () => optionDispatch({type:'EDIT_CHANGE', payload:editArea.id})
+    const save = () => {
+        dispatchStore(editPost(modifyPost))
+        close()
+    }
+    
+
     return (
         <div className="editPanel-wrapper">
             <div className='editPanel'>
-                <h2>Edit post {post.id}</h2>
-                <div className='editable-box editPanel-title'>
-                    <h2>Title</h2>
-                    <EditableText text={post.title} resize={true} />
+
+                <div>
+                    <h2>Edit post {editArea.id}</h2>
+                    <div className='editable-box'>
+                        <h2 className='editable_reference'>Title</h2>
+                        <EditableText callback={modifyText} name={'title'} text={editArea.title} max={75} />
+                    </div>
+                    <div className='editable-box'>
+                        <h2 className='editable_reference'>Body</h2>
+                        <div className='editPanel-body'>
+                            <EditableText callback={modifyText} name={'body'} text={editArea.body} />
+                        </div>
+                    </div>
                 </div>
-                <div className='editable-box editPanel-body'>
-                    <h2>Body</h2>
-                    <EditableText text={post.body} resize={true} />
+
+                <div className='edit_panel-btns'>
+                    <div onClick={save}>
+                        <Btn class='save' content='Save' />
+                    </div>
+                    <div onClick={close}>
+                        <Btn class='discard' content='Discard'/>
+                    </div>
                 </div>
-                <button className='btn btn-save'>Save</button>
-                <button className='btn btn-discard'>Discard</button>
+
             </div>
         </div>
     )

@@ -14,3 +14,10 @@
 .editableText:focus{
     outline: none;
 }
+
+.textarea-max{
+    border: 1px solid red;
+}
+.editable_error-max{
+    color: rgb(255, 0, 0);
+}

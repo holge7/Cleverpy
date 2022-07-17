@@ -5,6 +5,8 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { fetchPosts } from './store/posts/postsSlice';
 
 import Content from './components/content/Content';
+import Nav from './components/nav/Nav';
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
   const {posts, loading, error} = useAppSelector((state)=>state.posts);
@@ -16,7 +18,15 @@ function App() {
 
   return (
     <div className="App">
-      <Content />
+      <nav id='Nav'>
+        <Nav />
+      </nav>
+      <aside id='Sidebar'>
+        <Sidebar />
+      </aside>
+      <section id='Section'>
+        <Content />
+      </section>
     </div>
   );
 }

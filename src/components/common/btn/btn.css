@@ -1,0 +1,53 @@
+.btn{
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    padding: .4rem 1.3rem;
+    font-size: var(--normal);
+    font-family: var(--font-family);
+    font-weight: bold;
+    margin: 0 .3rem;
+    z-index: 5;
+    position: relative;
+    box-shadow: 0 0 4px 1px rgb(199, 199, 199);
+}
+ .btn-back{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: calc(100% + 3px);
+    width: 100%;
+    z-index: 0;
+}
+.btn:hover .btn-back{
+    animation: circle .4s linear reverse;
+}
+.btn-save:hover .btn-back{
+    border: 3px solid royalblue;
+}
+.btn-save{
+    border-bottom: 3px solid royalblue;
+}
+.btn-discard:hover .btn-back{
+    border: 3px solid red;
+}
+.btn-discard{
+    border-bottom: 3px solid red;
+}
+
+@keyframes circle {
+    0% {
+        clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 50%, 100% 100%, 0 100%, 0 0);
+    }
+    33% {
+        clip-path: polygon(50% 0%, 100% 0, 100% 0, 50% 50%, 100% 100%, 0 100%, 0 0);
+    }
+    67% {
+        clip-path: polygon(0 0, 0 0, 0 0, 50% 50%, 100% 100%, 0 100%, 0 0);
+    }
+    100% {
+        clip-path: polygon(0 100%, 0 100%, 0 100%, 50% 50%, 100% 100%, 0 100%, 0 100%);
+    }
+} 

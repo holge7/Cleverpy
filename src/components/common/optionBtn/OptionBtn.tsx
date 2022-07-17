@@ -1,53 +1,50 @@
-import React from "react";
-import { useState } from "react";
-import { useAppDispatch } from './../../../store/hooks';
-import { deletePost } from "../../../store/posts/postsSlice";
+import './optionBtn.css';
+import { useContext } from "react";
+
+//Components
+import OptionsPanel from '../optionsPanel/OptionsPanel';
 import EditPanel from "../editPanel/EditPanel";
 
+//Types
 import { posts } from "../../../types/types";
 
-import './optionBtn.css';
+//Context
+import { OptionsContext } from '../../content/Content';
 
-type id = {
-    id:number
-}
+//Store
+import { useAppDispatch } from './../../../store/hooks';
+import { addEditArea } from "../../../store/posts/postsSlice";
 
 export default (post:posts) => {
 
-    const [option, setOption] = useState(false)
-    const [edit, setEdit] = useState(false)
+    const {optionState, optionDispatch} = useContext(OptionsContext);
+    
     const dispatch = useAppDispatch()
 
-    const changeOption = () => setOption(!option)
-    const changeEdit = () => {
-        setOption(false)
-        setEdit(!edit)
-    }
-    
-
-    const removePost = () => {
-        dispatch(deletePost(post.id)) 
+    const optionDown = () => {
+        optionDispatch({type:'OPTIONS_CHANGE', payload:post.id});
+        dispatch(addEditArea(post)) 
     }
 
+
+    const isOptionDown = () => optionState.optionsDown == post.id
+    const isEditMode = () => optionState.editMode == post.id
     
 
 
 
     return(
-        <div className="option_wrapper">
+
+        <div>
             <div className="option-menu">
-                <div className={`option_btn ${option ? 'option_btn-act' : ''}`} onClick={changeOption}><i className={`bi bi-caret-down`}></i></div>
-                {option && 
-                <div className="option_card-wrapper">
-                    <div className="option-card">
-                        <div className="option option-danger" onClick={removePost}>Delete <i className="bi bi-trash"></i></div>
-                        <div className="option option-blue" onClick={changeEdit}>Edit <i className="bi bi-pencil"></i></div>
-                        <div className="option">Other options... 🤔</div>
-                    </div>
+                <div 
+                    onClick={optionDown}
+                    className={`option_btn ${isOptionDown() && 'option_btn-act'}`}>
+                    <i className={`bi bi-caret-down`}></i>
                 </div>
-                }
+                {isOptionDown() && <OptionsPanel />}
             </div>
-            {edit && <EditPanel {...post} />}
+            {isEditMode() && <EditPanel />}
         </div>
     )
 }

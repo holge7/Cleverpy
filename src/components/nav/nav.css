@@ -1,0 +1,55 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    grid-column-start: 3;
+    grid-column-end: 11;
+}
+.nav-section{
+    
+    display: flex;
+    align-items: center;
+}
+.logo{
+    height: 3.5vh;
+}
+.login-btn{
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    padding: .3rem 1rem;
+    border-radius: .4rem;
+    font-size: var(--normal);
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.pink{
+    border-color: var(--pink);
+    color: var(--pink);
+}
+.pink:hover{
+    color: var(--white);
+    background-color: var(--pink);
+}
+
+.purple{
+    border-color: var(--purple);
+    color: var(--purple);
+}
+.purple:hover{
+    color: var(--white);
+    background-color: var(--purple);
+}
+
+
+.nav_search{
+    border-radius: .3rem;
+    padding: .4rem .3rem;
+    border: 1px solid var(--gray);
+}
+
+.search{
+    border: none;
+    font-size: var(--normal);
+}

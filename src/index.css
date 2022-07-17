@@ -25,8 +25,9 @@ code {
   --gray-transparent: #e0e0e08a;
   --white-second: #F5F5F5;
   --white: #FFFFFF;
-  --purple: #2A1D69;
-  --purple-second:#E6EFFB;
+  --purple: #712480;
+  --pink:#E11574;
+  --blue-dark: #1F2937;
 
   /*FONT*/
   --xs: .7rem;

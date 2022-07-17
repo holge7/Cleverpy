@@ -4,7 +4,48 @@
   background-color: var(--white-second);
 }
 
+#Nav{
+  grid-column: span 12;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray);
+  box-shadow: 0 0 1px 1px var(--gray);
+  height: 6vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#Sidebar{
+  border: 2px solid;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  margin-top: .5rem;
+  height: 90vh;
+  top: .5rem;
+  position: sticky;
+}
+
+#Section{
+  grid-column: span 6;
+  padding: 0 1rem;
+}
+
 .Content{
-  grid-column-start: 4;
-  grid-column-end: 10;
+  grid-column: span 12;
+}
+
+/* TABLET */
+@media (min-width: 800px) {
+  .Content{
+    grid-column-start: 3;
+    grid-column-end: 11;
+  }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .Content{
+    grid-column-start: 4;
+    grid-column-end: 10;
+  }
 }

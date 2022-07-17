@@ -17,34 +17,46 @@
     background-color: var(--white);
     border: 2px solid;
     padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.editable_reference{
+    margin-bottom: .3rem;
 }
 
 .editPanel-title{
-    width: 100%;
-    height: max-content;
+    max-height: 7vh;
+    overflow-y: scroll;
 }
 .editable-box{
     margin: 1rem 0;
 }
+.editPanel-body{
+    max-height: 40vh;
+    overflow-y: scroll;
 
-.btn{
-    border: none;
-    border: 1px solid black;
-    padding: .5rem 1rem;
-    border-radius: var(--radius);
-    font-size: var(--normal);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
 }
 
-.btn-save{
-    background-color: royalblue;
+.edit_panel-btns{
+    display: flex;
+    justify-content: flex-end;
 }
 
-.btn-discard{
-    background-color: red;
 
+
+@keyframes pop {
+    0%{
+        height: 0;
+    }
+    60%{
+        height: 70vh;
+        width: 18rem;
+    }
+    100%{
+        height: 60vh;
+        width: 20rem;
+    }
 }
 
 
@@ -53,6 +65,21 @@
     .editPanel{
         width: 70vw;
         height: 80vh;
+        animation: pop .2s ease-in;
+    }
+
+    @keyframes pop {
+        0%{
+            height: 0;
+        }
+        60%{
+            width: 62vw;
+            height: 90vh;
+        }
+        100%{
+            width: 70vw;
+            height: 80vh;
+        }
     }
 }
 
@@ -62,5 +89,19 @@
     .editPanel{
         width: 40vw;
         height: 80vh;
+    }
+
+    @keyframes pop {
+        0%{
+            height: 0;
+        }
+        60%{
+            width: 30vw;
+            height: 90vh;
+        }
+        100%{
+            width: 40vw;
+            height: 80vh;
+        }
     }
 }

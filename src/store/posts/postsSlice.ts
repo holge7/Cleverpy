@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
-import { postReq } from "../../types/types";
-import { getPosts, removePost } from "../../services/postsService";
+import { postReq, posts } from "../../types/types";
+import { getPosts, removePostBack, editPostBack } from "../../services/postsService";
 
 
 const initialState: postReq = {
-    loading: false,
-    posts:[],
+    loading: true,
     error:'',
+    posts:[],
+    editArea:{},
 }
 
 const fetchPosts = createAsyncThunk('posts/fetchPosts', getPosts)
@@ -19,10 +19,18 @@ const postsSlice = createSlice({
     name:'posts',
     initialState,
     reducers:{
-        deletePost: (state:postReq, action: PayloadAction<number>)=>{
-            let postDelete = state.posts.findIndex(post => post.id === action.payload)
+        deletePost: (state:postReq)=>{
+            let postDelete = state.posts.findIndex(post => post.id === state.editArea.id)
             state.posts.splice(postDelete, 1);
-            // removePost(action.payload);
+            // removePostBack(action.payload); BACK-END
+        },
+        editPost: (state:postReq, action:PayloadAction<posts>)=>{
+            let postEdit = state.posts.findIndex(post => post.id === action.payload.id)
+            state.posts[postEdit] = action.payload
+            // editPostBack(state.posts[postEdit]); BACK-END
+        },
+        addEditArea: (state:postReq, action:PayloadAction<posts>)=>{
+            state.editArea = action.payload
         }
     },
     extraReducers: builder => {
@@ -33,12 +41,12 @@ const postsSlice = createSlice({
             state.loading = false;
             state.posts = action.payload.data;
             state.error = '';
-
         })
         .addCase(fetchPosts.rejected, (state, action)=>{
             state.loading = false;
             state.posts = [];
             state.error = action.error.message;
+            console.log("error")
         })
     }
 })
@@ -46,4 +54,4 @@ const postsSlice = createSlice({
 
 export default postsSlice.reducer;
 export {fetchPosts}
-export const {deletePost} = postsSlice.actions;
+export const {deletePost, editPost, addEditArea} = postsSlice.actions;

@@ -7,8 +7,9 @@ export interface posts{
 
 export interface postReq{
     loading: boolean,
-    posts: Array<posts>,
     error:string | undefined,
+    posts: Array<posts>,
+    editArea:post | null,
 }
 
 type posts = {
