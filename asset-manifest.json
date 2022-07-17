@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/PruebaTecnica/static/css/main.1e13f06c.css",
-    "main.js": "/PruebaTecnica/static/js/main.a9d2cc52.js",
-    "static/js/787.fc08928e.chunk.js": "/PruebaTecnica/static/js/787.fc08928e.chunk.js",
-    "static/media/logo.png": "/PruebaTecnica/static/media/logo.69f9fe33573bc1fcc886.png",
-    "index.html": "/PruebaTecnica/index.html",
-    "main.1e13f06c.css.map": "/PruebaTecnica/static/css/main.1e13f06c.css.map",
-    "main.a9d2cc52.js.map": "/PruebaTecnica/static/js/main.a9d2cc52.js.map",
-    "787.fc08928e.chunk.js.map": "/PruebaTecnica/static/js/787.fc08928e.chunk.js.map"
+    "main.css": "/Cleverpy/static/css/main.1e13f06c.css",
+    "main.js": "/Cleverpy/static/js/main.fab2afbc.js",
+    "static/js/787.fc08928e.chunk.js": "/Cleverpy/static/js/787.fc08928e.chunk.js",
+    "static/media/logo.png": "/Cleverpy/static/media/logo.69f9fe33573bc1fcc886.png",
+    "index.html": "/Cleverpy/index.html",
+    "main.1e13f06c.css.map": "/Cleverpy/static/css/main.1e13f06c.css.map",
+    "main.fab2afbc.js.map": "/Cleverpy/static/js/main.fab2afbc.js.map",
+    "787.fc08928e.chunk.js.map": "/Cleverpy/static/js/787.fc08928e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1e13f06c.css",
-    "static/js/main.a9d2cc52.js"
+    "static/js/main.fab2afbc.js"
   ]
 }
